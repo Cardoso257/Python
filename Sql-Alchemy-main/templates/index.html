@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula SQLAlchemy - CRUD</title>
+</head>
+<body>
+    <h1>Cadastro de Alunos</h1>
+
+    <form action="/" method="POST">
+        <input type="text" name="nome" placeholder="Nome do Aluno" required>
+        <input type="text" name="telefone" placeholder="Telefone" required>
+        <button type="submit">Adicionar Aluno</button>
+    </form>
+
+    <hr>
+
+    <h3>Total de alunos cadastrados: {{ total_alunos }}</h3>
+
+    <table border="1" cellpadding="8" style="border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for aluno in alunos %}
+            <tr>
+                <td>{{ aluno.id }}</td>
+                <td>{{ aluno.nome }}</td>
+                <td>{{ aluno.telefone }}</td>
+                <td>
+                    <a href="{{ url_for('editar', id=aluno.id) }}">Editar</a> | 
+                    <a href="{{ url_for('deletar', id=aluno.id) }}">Deletar</a>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="4" style="text-align: center;">Nenhum aluno cadastrado no momento.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

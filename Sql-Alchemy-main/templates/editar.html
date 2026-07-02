@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Aluno</title>
+</head>
+<body>
+    <h1>Editar Aluno</h1>
+
+    <form action="{{ url_for('editar', id=aluno.id) }}" method="POST">
+        <label>Nome:</label><br>
+        <input type="text" name="nome" value="{{ aluno.nome }}" required>
+        <br><br>
+        
+        <label>Telefone:</label><br>
+        <input type="text" name="telefone" value="{{ aluno.telefone }}" required>
+        <br><br>
+        
+        <button type="submit">Atualizar</button>
+    </form>
+
+    <br>
+    <a href="{{ url_for('index') }}">Voltar para a lista</a>
+</body>
+</html>

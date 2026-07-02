@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade Jinja2</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        h2 { color: #333; border-bottom: 2px solid #ccc; padding-bottom: 5px; }
+        .box { background: #f4f4f4; padding: 10px; border-left: 5px solid #007BFF; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <h1>Resolução da Atividade</h1>
+
+    <h2>Exercício 1</h2>
+    <div class="box">
+        <p>Olá, {{ nome }}!</p>
+    </div>
+
+    <h2>Exercício 2</h2>
+    <div class="box">
+        <p><strong>Nome:</strong> {{ nome }}</p>
+        <p><strong>Idade:</strong> {{ idade }} anos</p>
+    </div>
+
+    <h2>Exercício 3 (Acessando Dicionário)</h2>
+    <div class="box">
+        <p><strong>Nome do Usuário:</strong> {{ usuario.nome }}</p>
+        <p><strong>E-mail do Usuário:</strong> {{ usuario.email }}</p>
+    </div>
+
+    <h2>Exercício 4 (Loop For)</h2>
+    <div class="box">
+        <ul>
+        {% for aluno in alunos %}
+            <li>{{ loop.index }} - {{ aluno.nome }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+
+    <h2>Exercício 5 (Condicional)</h2>
+    <div class="box">
+        <p>Nota obtida: {{ nota }}</p>
+        <p>Status: 
+            {% if nota >= 7 %}
+                <span style="color: green; font-weight: bold;">Aprovado</span>
+            {% else %}
+                <span style="color: red; font-weight: bold;">Reprovado</span>
+            {% endif %}
+        </p>
+    </div>
+
+</body>
+</html>
