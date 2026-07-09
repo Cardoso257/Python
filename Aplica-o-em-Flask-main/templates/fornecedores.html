@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Fornecedores</h2>
+<ul>{% for f in fornecedores %}
+    <li>{{f.nome_empresa}} - {{f.cnpj}} - {{f.produto_fornecido}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
